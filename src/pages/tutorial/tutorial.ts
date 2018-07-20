@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, MenuController, NavController, Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, MenuController, NavController, Platform, Slides } from 'ionic-angular';
 
 import { TranslateService } from '@ngx-translate/core';
 
@@ -17,8 +17,10 @@ export interface Slide {
 export class TutorialPage {
   slides: Slide[];
   showSkip = true;
+  showNext = true;
+  reachedEnd = false;
   dir: string = 'ltr';
-
+  @ViewChild(Slides) slider: Slides;
   constructor(public navCtrl: NavController, public menu: MenuController, translate: TranslateService, public platform: Platform) {
     this.dir = platform.dir();
     translate.get(["TUTORIAL_SLIDE1_TITLE",
@@ -34,17 +36,17 @@ export class TutorialPage {
           {
             title: values.TUTORIAL_SLIDE1_TITLE,
             description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-1.png',
+            image: 'assets/img/onboarding_1.png',
           },
           {
             title: values.TUTORIAL_SLIDE2_TITLE,
             description: values.TUTORIAL_SLIDE2_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-2.png',
+            image: 'assets/img/onboarding_2.png',
           },
           {
             title: values.TUTORIAL_SLIDE3_TITLE,
             description: values.TUTORIAL_SLIDE3_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-3.png',
+            image: 'assets/img/onboarding_3.png',
           }
         ];
       });
@@ -59,6 +61,14 @@ export class TutorialPage {
 
   onSlideChangeStart(slider) {
     this.showSkip = !slider.isEnd();
+    this.showNext = !slider.isEnd();
+    if (slider.isEnd()) {
+      this.reachedEnd = slider.isEnd();
+      slider.pager = false;
+    } else {
+      this.reachedEnd = false;
+      slider.pager = true;
+    }
   }
 
   ionViewDidEnter() {
@@ -71,4 +81,7 @@ export class TutorialPage {
     this.menu.enable(true);
   }
 
+  getNext() {
+    this.slider.slideNext();
+  }
 }
