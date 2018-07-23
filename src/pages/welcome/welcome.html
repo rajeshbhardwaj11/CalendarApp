@@ -1,10 +1,10 @@
 <ion-content scroll="false">
   <div class="splash-bg">
-    <div style="padding-top: 60ex;">
-        <button ion-button full round (click)="facebook()" class="facebook">{{ 'JOIN US WITH FACEBOOK' | translate }}</button>
-        <button ion-button full round (click)="email()" class="facebook">{{ 'JOIN US WITH EMAIL' | translate }}</button>  
+    <div class="row" style="padding-top: 60ex; width: 70%; margin-left: 15%; margin-right: 15%; text-transform: initial;">
+        <button class="col" ion-button full round (click)="facebook()" class="facebook">{{ 'JOIN US WITH FACEBOOK' | translate }}</button>
+        <button class="col" ion-button full round (click)="signup()" class="facebook">{{ 'JOIN US WITH EMAIL' | translate }}</button>  
       <!-- <button ion-button block round (click)="signup()">{{ 'SIGNUP' | translate }}</button> -->
-        <button ion-button round (click)="login()" class="login">{{ 'Already Have an Account? Log In' | translate }}</button>
+        <button ion-button class="col" full round (click)="login()" class="login">{{ 'Already Have an Account? Log In' | translate }}</button>
       </div>
   </div>
   
