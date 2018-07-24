@@ -1,3 +1,8 @@
 page-tabs {
-
+    .tabs-md .tab-button-icon{
+        font-size: 4.4rem;
+    }
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        color: darkorange;
+    }
 }

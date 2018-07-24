@@ -1,8 +1,9 @@
 {
   "BACK_BUTTON_TEXT": "Back",
 
-  "NAME": "Name",
+  "NAME": "NAME",
   "EMAIL": "USERNAME",
+  "SIGNUP_EMAIL": "EMAIL",
   "USERNAME": "Username",
   "PASSWORD": "PASSWORD",
   "LOGIN": "Sign in",
@@ -47,9 +48,9 @@
   "LOGIN_ERROR": "Unable to sign in. Please check your account information and try again.",
   "LOGIN_BUTTON": "LOGIN",
   "LOGIN_FB_BUTTON": "LOGIN WITH FACEBOOK",
-  "SIGNUP_TITLE": "Sign up",
+  "SIGNUP_TITLE": "SIGNUP WITH EMAIL",
   "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
-  "SIGNUP_BUTTON": "Sign up",
+  "SIGNUP_BUTTON": "Get Started",
 
   "LIST_MASTER_TITLE": "Items",
 

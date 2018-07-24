@@ -1,19 +1,36 @@
 page-login {
     .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
-        border-bottom: 1px solid darkorange;
-        -webkit-box-shadow: inset 0 -1px 0 0 darkorange;
-        box-shadow: inset 0 -1px 0 0 darkorange;
+        border-bottom: 1px solid darkgray;
+        -webkit-box-shadow: inset 0 -1px 0 0 darkgray;
+        box-shadow: inset 0 -1px 0 0 darkgray;
+        margin-left: -5ex;
     }
 
     .item-md.item-input.input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner {
         border-bottom: 1px solid darkorange;
         -webkit-box-shadow: inset 0 -1px 0 0 darkorange;
         box-shadow: inset 0 -1px 0 0 darkorange;
+        margin-left: -5ex;
     }
 
     .item-md ion-icon[item-left] + .item-inner, .item-md ion-icon[item-left] + .item-input, .item-md ion-icon[item-start] + .item-inner, .item-md ion-icon[item-start] + .item-input {
-        margin-left: 24px;
+        margin-left: -5ex;
         margin-right: 24px;
+    }
+
+    .item-input ion-input, .item-input ion-textarea {
+        position: static;
+        margin-left: 5ex;
+    }
+    .ionItem {
+        margin: 4ex 2ex 4ex 2ex;
+        width: 95%;
+    }
+
+    .button-md {
+        height: 4.6rem;
+        width: 95%;
+        margin-left: 2.5% !important;
     }
 
     h6.or-text {
