@@ -11,7 +11,7 @@ import { Items } from '../../providers';
 })
 export class ListMasterPage {
   currentItems: Item[];
-
+  expandCalendar = false;
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
     this.currentItems = this.items.query();
   }
@@ -34,6 +34,14 @@ export class ListMasterPage {
       }
     })
     addModal.present();
+  }
+
+  showCalendar() {
+    if (!this.expandCalendar) {
+      this.expandCalendar = true;
+    } else {
+      this.expandCalendar = false;
+    }
   }
 
   /**

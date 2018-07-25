@@ -1,13 +1,29 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons left>
+        <button ion-button icon-only>
+          <ion-icon name="ios-contact"></ion-icon>
+        </button>
+    </ion-buttons>
     <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
 
-    <ion-buttons end>
+    <ion-buttons end *ngIf="!expandCalendar">
+      <button ion-button icon-only (click)="showCalendar()">
+        <ion-icon name="ios-reorder"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="expandCalendar">
+      <button ion-button icon-only (click)="showCalendar()">
+        <ion-icon name="md-reorder"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!-- <ion-buttons end>
       <button ion-button icon-only (click)="addItem()">
         <ion-icon name="add"></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-navbar>
 
 </ion-header>
@@ -32,4 +48,17 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab style="background-color: white; color: darkorange; border: .5px solid lightgrey;">
+        <ion-icon name="md-calendar"></ion-icon>
+        <div class="label">Gathering</div>
+      </button>
+      <button ion-fab style="background-color: white; color: darkorange; border: .5px solid lightgrey;">
+        <ion-icon name="md-notifications"></ion-icon>
+        <div class="label">Reminder</div>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
